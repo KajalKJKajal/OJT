@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Navbar</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
+
+.navbar-toggler {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .navbar-nav {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggler.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggler.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar-nav.active {
+    left: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#">My Website</a>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Services</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <div class="navbar-toggler">
+      <span class="bar">
+      <span class="bar">
+      <span class="bar">
+    </div>
+  </nav>
+<script>
+    const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarNav = document.querySelector('.navbar-nav');
+
+navbarToggler.addEventListener('click', () => {
+  navbarToggler.classList.toggle('active');
+  navbarNav.classList.toggle('active');
+});
+
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

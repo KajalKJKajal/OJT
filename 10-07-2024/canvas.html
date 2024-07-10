@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas1" width="200" height="100" style="border: 1px solid black;">
+        Your Browser does not support HTML canvas
+    </canvas>
+    
+    <canvas id="mycanvas2" width="200" height="100" style="border: 1px solid rgb(234, 11, 145);">
+        Your Browser does not support HTML canvas
+    </canvas>
+    <script>
+        var canvas1 = document.getElementById("mycanvas1");
+        var ctx1 = canvas1.getContext("2d");
+        ctx1.moveTo(0,0);
+        ctx1.lineTo(200,100);
+        ctx1.stroke();
+        var canvas2 = document.getElementById("mycanvas2");
+        var ctx2 = canvas2.getContext("2d");
+        ctx2.moveTo(0,0);
+        ctx2.lineTo(200,100);
+        ctx2.stroke();
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    .modal-dialog {
+      bottom: 0;
+      right: 0;
+      position: fixed;
+      margin: 0;
+    }
+    .modal-content {
+      border: 3px solid #f1f1f1;
+    }
+    .modal-header, .modal-body, .modal-footer {
+      background-color: white;
+    }
+    .btn-custom {
+      background-color: #ffc919;
+      color: white;
+      opacity: 0.8;
+    }
+    .btn-custom:hover {
+      opacity: 1;
+    }
+    .btn-custom-close {
+      background-color: rgb(4, 8, 230);
+    }
+    .rating {
+      direction: rtl;
+      display: inline-block;
+      font-size: 1.5em;
+    }
+    .rating input {
+      display: none;
+    }
+    .rating label {
+      color: #ddd;
+      cursor: pointer;
+    }
+    .rating label:hover,
+    .rating label:hover ~ label,
+    .rating input:checked ~ label {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Bootstrap Modal</h2>
+<p>Click on the button at the bottom of this page to open the review form.</p>
+
+<!-- Button to open the modal -->
+<button type="button" class="btn btn-custom" data-toggle="modal" data-target="#myModal">
+  Open Form
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Review Form</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form action="/action_page.php" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="name"><b>Name</b></label>
+            <input type="text" class="form-control" placeholder="Enter Name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="feedback"><b>Feedback</b></label>
+            <textarea class="form-control" placeholder="Enter Feedback" name="feedback" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="rating"><b>Rating</b></label>
+            <div class="rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label for="star5">&#9733;</label>
+              <input type="radio" id="star4" name="rating" value="4" /><label for="star4">&#9733;</label>
+              <input type="radio" id="star3" name="rating" value="3" /><label for="star3">&#9733;</label>
+              <input type="radio" id="star2" name="rating" value="2" /><label for="star2">&#9733;</label>
+              <input type="radio" id="star1" name="rating" value="1" /><label for="star1">&#9733;</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="file"><b>Share Your Experience</b></label>
+            <input type="file" class="form-control-file" name="file" required>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-custom btn-custom-close" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
